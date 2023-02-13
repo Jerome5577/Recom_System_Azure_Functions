@@ -1,0 +1,36 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "name": "inputBlobInteractions",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "p9containerrecosys/users_new_interactions_list.json",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+    {
+      "name": "blobout",
+      "type": "blob",
+      "dataType": "binary",
+      "direction": "out",
+      "path": "p9containerrecosys/users_new_interactions_list.json",
+      "connection": "MyStorageConnectionAppSetting"
+  }
+  ]
+}

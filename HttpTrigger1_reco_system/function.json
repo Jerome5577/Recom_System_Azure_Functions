@@ -1,0 +1,73 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+
+    {
+      "name": "inputBlobCat",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "p9containerrecosys/top_3_prefered_categories.pkl",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+
+    {
+      "name": "inputBlobPCADfArticlesVectors",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "p9containerrecosys/PCA_df_used_articles_vector_matrix.csv",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+    {
+      "name": "inputBlobArrayArticleIdsForPCADfArticlesVectors",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "p9containerrecosys/PCA_df_used_articles_vector_matrix_ArrayArticleIds.npy",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+
+	{
+      "name": "inputBlobUsers5articles",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "p9containerrecosys/5_most_read_articles.npy",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+
+	{
+      "name": "inputBlobUsersClicks",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "p9containerrecosys/users_clicks_for_articles_and_category.csv",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    },
+
+    {
+      "name": "inputBlobArticlesMetadata",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "p9containerrecosys/articles_metadata_for_used_articles.csv",
+      "connection": "MyStorageConnectionAppSetting",
+      "direction": "in"
+    }
+  ]
+}
